@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  overflow-wrap: break-word;
+  position: relative;
+}
+.header-title-logo img {
+  max-height: 9.375rem;
+  width: auto;
+  max-width: 100%;
+}
+.header {
+  background: #0d0d0d;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  columns: flex;
+}
+.header-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  columns: flex;
+  margin: 2rem 3rem;
+  background: #0d0d0d;
+}
+.container {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  width: auto;
+}
+h3 {
+  width: 100%;
+  margin: 2rem 2rem;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .header-title-logo img {
+    max-height: 65px;
+  }
+}
+.row {
+  width: 100%;
+  overflow: hidden;
+}
+.row__inner {
+  transition: 450ms transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 2rem 2rem;
+  padding-bottom: 10px;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+}
+.tile__img {
+  width: 250px;
+  height: 140.625px;
+  object-fit: cover;
+  object-position: 5px 10%;
+}
+@media screen and (max-width: 767px) {
+  .row {
+    justify-content: center;
+    max-width: 100%;
+    overflow: scroll;
+  }
+  .tile__img {
+    max-width: 10.313wrem;
+    max-height: 8.789rem;
+  }
+  .row__inner {
+    margin: 2rem 2rem;
+  }
+}
+.tile__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  transition: 450ms opacity;
+}
+.tile__details:after,
+.tile__details:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.tile__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.tile__details:before {
+  left: 0;
+  width: 100%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -18px;
+  text-align: center;
+  z-index: 2;
+}
+.tile:hover .tile__details {
+  opacity: 1;
+}
+.tile__title {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+.row__inner:hover {
+  transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.3;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  transform: translate3d(125px, 0, 0);
+}
